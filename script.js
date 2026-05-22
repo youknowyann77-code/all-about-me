@@ -2,6 +2,30 @@
    ALL ABOUT ME — script.js
    ============================================= */
 
+// ---- NONAKTIFKAN LONG PRESS POPUP & CONTEXT MENU ----
+document.addEventListener('contextmenu', (e) => e.preventDefault());
+document.addEventListener('selectstart', (e) => e.preventDefault());
+
+// Cegah popup link saat long press di mobile
+document.addEventListener('touchstart', (e) => {
+  const el = e.target.closest('a, img');
+  if (el) {
+    el._longPressTimer = setTimeout(() => {}, 800);
+  }
+}, { passive: true });
+
+document.addEventListener('touchend', (e) => {
+  const el = e.target.closest('a, img');
+  if (el && el._longPressTimer) {
+    clearTimeout(el._longPressTimer);
+  }
+}, { passive: true });
+
+// Paksa semua link & gambar blokir contextmenu
+document.querySelectorAll('a, img').forEach(el => {
+  el.addEventListener('contextmenu', (e) => e.preventDefault());
+});
+
 // ---- CUSTOM CURSOR ----
 const cursor = document.getElementById('cursor');
 const cursorTrail = document.getElementById('cursorTrail');
@@ -25,6 +49,18 @@ hoverables.forEach(el => {
   });
 });
 
+// ---- SMOOTH SCROLL FOR HERO NAV LINKS ----
+document.querySelectorAll('.hero-sub a[href^="#"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href').slice(1);
+    const target = document.getElementById(targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
 // ---- SCROLL REVEAL ----
 const revealEls = document.querySelectorAll('.reveal');
 
@@ -45,9 +81,6 @@ revealEls.forEach((el, i) => {
 });
 
 // ---- FOTO PROFIL ----
-// Cara pakai: ganti nilai di bawah dengan URL foto online ATAU nama file lokal
-// Contoh URL online : "https://i.imgur.com/xxxxx.jpg"
-// Contoh file lokal : "foto-aku.jpg"  (letakkan file di folder yang sama)
 const PROFILE_PHOTO_SRC = "profil.jpg"; // ← isi di sini
 
 const profileImg = document.getElementById('profileImg');
@@ -60,9 +93,6 @@ if (PROFILE_PHOTO_SRC.trim() !== '') {
 }
 
 // ---- FOTO ANIME ----
-// Cara pakai: ganti nilai di bawah dengan URL foto online ATAU nama file lokal
-// Contoh URL online : "https://i.imgur.com/xxxxx.jpg"
-// Contoh file lokal : "onepiece-cover.jpg" (letakkan file di folder yang sama)
 const ANIME_COVER_SRC = "onepiece.jpg"; // ← isi di sini
 
 const animeImg = document.getElementById('animeImg');
@@ -75,8 +105,6 @@ if (ANIME_COVER_SRC.trim() !== '') {
 }
 
 // ---- BIRTHDAY / AGE CALCULATOR ----
-// Ganti tanggal lahir di bawah (format: YYYY, MM-1, DD)
-// Bulan dimulai dari 0: Januari=0, Februari=1, ... Desember=11
 const BIRTH_DATE = new Date(2000, 0, 1); // ← contoh: 1 Januari 2000
 
 function calculateAge(birthDate) {
@@ -116,7 +144,6 @@ function togglePlay(num) {
   const vinyl = document.getElementById('vinyl' + num);
   const other = num === 1 ? 2 : 1;
 
-  // Pause the other track if playing
   if (!audios[other].paused) {
     audios[other].pause();
     document.getElementById('playBtn' + other).innerHTML = PLAY_ICON;
@@ -136,7 +163,6 @@ function togglePlay(num) {
   }
 }
 
-// Update progress bars & duration displays
 [1, 2].forEach(num => {
   const audio = audios[num];
   const bar = document.getElementById('bar' + num);
@@ -157,7 +183,6 @@ function togglePlay(num) {
     dur.textContent = '0:00';
   });
 
-  // Click on progress bar to seek
   document.getElementById('bar' + num).closest('.music-bar').addEventListener('click', (e) => {
     if (!audio.duration) return;
     const rect = e.currentTarget.getBoundingClientRect();
