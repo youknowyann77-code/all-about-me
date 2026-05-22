@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All About Me</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- Noise overlay -->
+  <div class="noise"></div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-star star-1">✦</div>
+    <div class="hero-bg-star star-2">✦</div>
+    <div class="hero-bg-star star-3">✦</div>
+    <div class="hero-content">
+      <p class="hero-label reveal">— portfolio pribadi</p>
+      <h1 class="hero-title reveal">
+        <span class="line">All</span>
+        <span class="line accent-text">About</span>
+        <span class="line">Me.</span>
+      </h1>
+      <p class="hero-sub reveal">Nama kamu · Designer · Dreamer</p>
+      <div class="hero-star reveal">✦</div>
+    </div>
+    <div class="scroll-hint reveal">scroll ke bawah ↓</div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="section-tag">01 / tentang aku</div>
+    <div class="about-grid">
+      <div class="about-photo-wrap reveal">
+        <div class="photo-frame" id="profilePhotoFrame">
+          <img
+            id="profileImg"
+            src=""
+            alt="Foto Profil"
+            class="profile-img"
+            onerror="this.style.display='none'; document.getElementById('profilePlaceholder').style.display='flex';"
+            style="display:none;"
+          />
+          <div class="photo-placeholder" id="profilePlaceholder">
+            <span class="photo-icon">✦</span>
+            <p>foto kamu</p>
+            <p class="photo-hint">ganti src di index.html</p>
+          </div>
+        </div>
+        <div class="photo-deco"></div>
+      </div>
+      <div class="about-text reveal">
+        <h2 class="section-title">Halo, aku<br /><em>yann</em></h2>
+        <p class="about-desc">
+          Selamat datang di ruang digitalku. Aku adalah seseorang yang suka tenggelam dalam dunia anime, musik, dan hal-hal yang membuat jiwa terasa lebih hidup.
+        </p>
+        <p class="about-desc">
+          Di sini aku berbagi sedikit tentang apa yang aku cintai — dari karakter anime yang membekas di hati, hingga lagu-lagu yang selalu menemani hariku.
+        </p>
+        <div class="about-tags">
+          <span class="tag">🎌 Anime Lover</span>
+          <span class="tag">🎵 Music Head</span>
+          <span class="tag">✨ Dreamer</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIRTHDAY -->
+  <section class="section birthday-section" id="birthday">
+    <div class="section-tag">02 / ulang tahun</div>
+    <div class="birthday-grid">
+      <div class="birthday-left reveal">
+        <h2 class="section-title">Hari<br /><em>Lahirku</em></h2>
+        <p class="about-desc">Setiap tahun adalah bab baru dalam cerita hidupku — penuh petualangan, tawa, dan kenangan yang tak terlupakan.</p>
+      </div>
+      <div class="birthday-card reveal">
+        <div class="bday-deco">✦</div>
+        <div class="bday-content">
+          <div class="bday-month">SEPTEMBER</div>
+          <div class="bday-day">09</div>
+          <div class="bday-divider"></div>
+          <div class="bday-zodiac">♍ virgo</div>
+        </div>
+        <div class="bday-deco bday-deco-bottom">✦</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOBI -->
+  <section class="section hobby-section" id="hobi">
+    <div class="section-tag">03 / hobi</div>
+    <h2 class="section-title center reveal">Hobi<br /><em>Favoritku</em></h2>
+    <div class="hobby-grid">
+      <div class="hobby-card reveal">
+        <div class="hobby-icon">🎨</div>
+        <h3 class="hobby-title">Menggambar</h3>
+        <p class="hobby-desc">Mengekspresikan perasaan lewat goresan tangan, dari sketsa sederhana hingga ilustrasi digital.</p>
+      </div>
+      <div class="hobby-card reveal">
+        <div class="hobby-icon">📚</div>
+        <h3 class="hobby-title">Membaca</h3>
+        <p class="hobby-desc">Tenggelam dalam dunia fiksi, manga, dan light novel yang membawa ke dimensi lain.</p>
+      </div>
+      <div class="hobby-card reveal">
+        <div class="hobby-icon">🎮</div>
+        <h3 class="hobby-title">Gaming</h3>
+        <p class="hobby-desc">Menjelajahi dunia virtual, menyelesaikan quest, dan menikmati cerita yang epik.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAKANAN FAVORIT -->
+  <section class="section food-section" id="makanan">
+    <div class="section-tag">04 / makanan favorit</div>
+    <h2 class="section-title center reveal">Makanan<br /><em>Favoritku</em></h2>
+    <div class="food-grid food-grid-2">
+      <div class="food-card reveal">
+        <div class="food-rank">01</div>
+        <div class="food-emoji">🍜</div>
+        <h3 class="food-name">Mie Ayam</h3>
+        <p class="food-desc">Semangkuk mie ayam dengan kuah kaldu gurih, potongan ayam berbumbu, dan topping bakso yang bikin nagih setiap hari.</p>
+        <div class="food-tag-wrap">
+          <span class="food-tag">Indonesia</span>
+          <span class="food-tag">Berkuah</span>
+          <span class="food-tag">Comfort Food</span>
+        </div>
+      </div>
+      <div class="food-card reveal">
+        <div class="food-rank">02</div>
+        <div class="food-emoji">🥞</div>
+        <h3 class="food-name">Martabak</h3>
+        <p class="food-desc">Martabak manis dengan topping coklat keju yang lumer, atau martabak telur gurih yang renyah di luar — dua-duanya juara!</p>
+        <div class="food-tag-wrap">
+          <span class="food-tag">Indonesia</span>
+          <span class="food-tag">Street Food</span>
+          <span class="food-tag">Favorit</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANIME FAVORIT -->
+  <section class="section anime-section" id="anime">
+    <div class="section-tag">05 / anime favorit</div>
+    <h2 class="section-title center reveal">Anime<br /><em>Favorit</em></h2>
+
+    <div class="anime-card reveal" id="animeCard">
+      <div class="anime-card-inner">
+        <div class="anime-badge">✦ #1 Favorit</div>
+        <div class="anime-cover" id="animeCover">
+          <img
+            id="animeImg"
+            src=""
+            alt="Anime Cover"
+            class="anime-cover-img"
+            onerror="this.style.display='none'; document.getElementById('animePlaceholder').style.display='flex';"
+            style="display:none;"
+          />
+          <div class="anime-cover-placeholder" id="animePlaceholder">
+            <span>⚔</span>
+          </div>
+        </div>
+        <div class="anime-info">
+          <h3 class="anime-title" id="animeTitle">One Piece</h3>
+          <p class="anime-genre" id="animeGenre">Action · Adventure · Fantasy</p>
+          <p class="anime-desc" id="animeDesc">
+            One Piece mengisahkan petualangan Monkey D. Luffy yang bermimpi menjadi Raja Bajak Laut. Bersama kru Bajak Laut Topi Jerami, ia mengarungi lautan berbahaya bernama Grand Line untuk mencari harta karun legendaris bernama "One Piece" yang ditinggalkan oleh Raja Bajak Laut sebelumnya, Gol D. Roger
+          </p>
+          <div class="anime-stats">
+            <div class="stat">
+              <span class="stat-num" id="animeScore">9.5</span>
+              <span class="stat-label">Rating</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" id="animeEps">1162</span>
+              <span class="stat-label">Episode</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" id="animeYear">1997</span>
+              <span class="stat-label">Tahun</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAGU FAVORIT -->
+  <section class="section music-section" id="music">
+    <div class="section-tag">06 / lagu favorit</div>
+    <h2 class="section-title center reveal">Lagu<br /><em>Favorit</em></h2>
+
+    <div class="music-grid">
+      <!-- Song 1 -->
+      <div class="music-card reveal" id="song1Card">
+        <div class="music-num">01</div>
+        <div class="music-art">
+          <div class="vinyl" id="vinyl1">
+            <div class="vinyl-inner">♪</div>
+          </div>
+        </div>
+        <div class="music-info">
+          <h3 class="music-title" id="song1Title">Backburner</h3>
+          <p class="music-artist" id="song1Artist">NIKI</p>
+          <p class="music-album" id="song1Album">Nicole</p>
+          <div class="music-bar">
+            <div class="bar-fill" id="bar1" style="width: 0%"></div>
+          </div>
+          <div class="music-controls">
+            <button class="play-btn" id="playBtn1" onclick="togglePlay(1)">
+              <svg id="icon1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0A0908" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <span class="music-dur" id="dur1">0:00</span>
+            <span class="music-total">/ 3:54</span>
+          </div>
+          <audio id="audio1" src="NIKI - Backburner.mp3" preload="metadata"></audio>
+        </div>
+      </div>
+
+      <!-- Song 2 -->
+      <div class="music-card reveal" id="song2Card">
+        <div class="music-num">02</div>
+        <div class="music-art">
+          <div class="vinyl" id="vinyl2">
+            <div class="vinyl-inner">♪</div>
+          </div>
+        </div>
+        <div class="music-info">
+          <h3 class="music-title" id="song2Title">A Year Ago</h3>
+          <p class="music-artist" id="song2Artist">James Arthur</p>
+          <p class="music-album" id="song2Album">Bitter Sweet Love</p>
+          <div class="music-bar">
+            <div class="bar-fill" id="bar2" style="width: 0%"></div>
+          </div>
+          <div class="music-controls">
+            <button class="play-btn" id="playBtn2" onclick="togglePlay(2)">
+              <svg id="icon2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0A0908" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <span class="music-dur" id="dur2">0:00</span>
+            <span class="music-total">/ 2:51</span>
+          </div>
+          <audio id="audio2" src="James Arthur - A Year Ago.mp3" preload="metadata"></audio>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-star">✦</div>
+    <p class="footer-text">by <em>ynn</em></p>
+    <p class="footer-sub">All About Me</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
